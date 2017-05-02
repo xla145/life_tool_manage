@@ -31,7 +31,6 @@ public class WebController {
 		String tag = null;  //表明查询的对象
 		Object data = null;
 		if(type.equals("user")){
-			System.out.println("---------"+userService.findUserInfoById(queryId));
 			data = userService.findUserInfoById(queryId);
 			tag = type;
 		}
@@ -41,7 +40,8 @@ public class WebController {
 		}else{
 			objResp.setCode(true);
 			objResp.setMsg("查询成功！");
-			json.put(tag, (JSONObject) JSONObject.toJSON(data));
+			json.put(tag, JSONObject.toJSON(data));
+			objResp.setData(json);
 		}
 	System.out.println(objResp.getData());
 		return objResp;

@@ -1,10 +1,7 @@
 package cn.net.xulian.vo;
 
-import com.alibaba.fastjson.annotation.JSONField;
-
 public class UserVO {
 	private String id;
-	@JSONField(name="entity")
 	private String name; //姓名
 
 	public String getName() {
